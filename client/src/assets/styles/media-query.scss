@@ -1,0 +1,77 @@
+// ============= CONSTANTS ELEMENTS ===========
+@import './constants.scss';
+
+
+// **********************************
+// ************* 1099 px ************
+// **********************************
+@media (max-width: 1099px) {
+    // Procuct Card
+    .all-products .products{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 840px) {
+    // Procuct Card
+    .all-products .products{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    // Add Product
+    .add-product{
+        width: 70%;
+    }
+}
+
+@media (max-width: 720px) {
+    // NavBar
+    nav {
+        flex-direction: column;
+        .links{
+            margin-top: 1em;
+            button{
+                font-size: 11px;
+            }
+        }
+    }
+    // Intro
+    .home-intro h1{
+        font-size: 100px;
+    }
+    // Procuct Details
+    .product-details .details{
+        grid-template-columns: repeat(1, 1fr);
+        .image{
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    // Intro
+    .home-intro h1{
+        font-size: 80px;
+    }
+    // Header Products
+    .all-products .header-product{
+        flex-direction: column;
+        .filter-bar{
+            margin-top: 1em;
+            width: 90%;
+            select{
+                width: 100%;
+            }
+        }
+    }
+    // Procuct Card
+    .all-products .products{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    // Add Product
+    .add-product{
+        width: 80%;
+        .form-actions .actions button{
+            font-size: 11px;
+        }
+    }
+}

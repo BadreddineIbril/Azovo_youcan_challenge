@@ -1,0 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;800&family=Kanit&family=Montserrat:wght@800&family=Poppins:wght@500&family=Yatra+One&display=swap');
+// ************* COLORS *************
+$primaryColor: #fff;
+$secondaryColor: #e6e6e6;
+$thirdColor: #b1b1b1;
+$btnBg: #eae6fb;
+$btnTxt: #2c00d5;
+$textColor: #222;
+
+// ************* FUNCTIONS *************
+@mixin flex(){
+    display: flex;
+    align-items: center;
+}
+@mixin flexA(){
+    display: flex;
+    justify-content: space-around;
+}
+@mixin flexB(){
+    display: flex;
+    justify-content: space-between;
+}
+@mixin flexAC(){
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+@mixin flexBC(){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@mixin shadowCard(){
+    box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 29px 0px;
+}
+
+
+// ************* DEFAULT *************
+*{
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+input,select,textarea{
+    border: none;
+    outline: none;
+    font-family: 'Poppins';
+    background-color: red;
+    color: $textColor;
+    transition: .5s;
+}
+button{
+    border: none;
+    outline: none;
+    font-family: 'Poppins';
+    background-color: $secondaryColor;
+    color: $textColor;
+    cursor: pointer;
+    transition: .5s;
+}
+a{
+    text-decoration: none;
+    color: $textColor;
+    transition: .5s;
+}
+ul{
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+}
+
+// ************* SCROLL BAR *******
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: $thirdColor; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+// ************* BODY *************
+body{
+    background-color: $primaryColor;
+    color: $textColor;
+    font-family: 'Poppins';
+}
