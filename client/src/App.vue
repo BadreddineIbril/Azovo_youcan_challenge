@@ -5,8 +5,8 @@
   import Footer from './layouts/Footer.vue'
   import AddProduct from './layouts/forms/AddProduct.vue'
   import AddCategory from './layouts/forms/AddCategory.vue'
-
-  // ****** Add Product & Categoryt Btn *******
+  
+  // ****** Add Product & Category Btn *******
   const productControl = ref(false); 
   const categoryControl = ref(false);
   

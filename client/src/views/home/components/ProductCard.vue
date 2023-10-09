@@ -1,5 +1,6 @@
 <script setup>
   import useProducts from './../../../api/ProductAPI.js'
+  import {API_URL} from './../../../config/index.js'
 
   const { deleteProduct } = useProducts()
 
@@ -9,7 +10,7 @@
     <!-- Product Card -->
     <div class="product-card" v-if="category === 0 || product.category_id === category">
         <router-link :to="'product-details/' + product.id">
-            <img :src="'http://127.0.0.1:8000/storage/' + product.image" />
+            <img :src="API_URL + 'storage/' + product.image" />
         </router-link>
         <!-- Product Info -->
         <div class="product-info">

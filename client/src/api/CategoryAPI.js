@@ -1,8 +1,9 @@
 import { ref } from "vue";
 import axios from "axios";
+import { API_URL } from "../config";
 
 // API URL
-axios.defaults.baseURL = "http://127.0.0.1:8000/api/"
+axios.defaults.baseURL = API_URL + "api/" 
 
 
 export default function useCategories() {
@@ -26,7 +27,8 @@ export default function useCategories() {
     const storeCategory = async (data) => {
         try {
             const response = await axios.post("categories", data);
-            return response.data
+            // return response.data
+            window.location.reload()
         } catch (error) {
             errors.value = error.response.data.message
         }

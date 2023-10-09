@@ -1,9 +1,10 @@
 import { ref } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
+import { API_URL } from "../config";
 
 // API URL
-axios.defaults.baseURL = "http://127.0.0.1:8000/api/"
+axios.defaults.baseURL = API_URL + "api/"
 
 
 export default function useProducts() {
@@ -40,7 +41,8 @@ export default function useProducts() {
         try {
             const response = await axios.post("products", data, {headers: {'Content-Type': 'multipart/form-data'}});
             await getProducts();
-            return response.data
+            // return response.data
+            window.location.reload()
         } catch (error) {
             errors.value = error.response.data.message
         }
@@ -67,7 +69,7 @@ export default function useProducts() {
 
         // ---- Refetch Data ----
         await getProducts();
-        // window.location.reload()
+        window.location.reload()
     };
 
   return {

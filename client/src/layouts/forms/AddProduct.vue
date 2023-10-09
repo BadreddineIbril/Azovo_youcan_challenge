@@ -2,12 +2,15 @@
   import useProducts from './../../api/ProductAPI.js'
   import useCategories from './../../api/CategoryAPI.js'
   import Loader from './../Loader.vue'
-  import { onMounted, ref, reactive  } from 'vue'
+  import { onMounted, ref, reactive, watch, defineProps } from 'vue'
 
-  const { storeProduct, errors, getProducts } = useProducts()
+  const { storeProduct, errors, getProducts, products } = useProducts()
   const { categories, getCategories } = useCategories()
   const loading = ref(false)
   const successMsg = ref("")
+
+  // --- Props ---
+  const { control, formControl } = defineProps(['control', 'formControl']);
 
   // ****** Get Data *******
   onMounted(() => getCategories() )
@@ -38,6 +41,7 @@
         if(success){
             successMsg.value = success.msg
             clearFormFields();
+            // refetchData(products.value)
         } else{
             successMsg.value = ""
         }
@@ -134,12 +138,3 @@
     <!-- Loader -->
     <Loader v-if="loading" />
 </template>
-
-<script>
-export default {
-  props: {
-    control: Boolean, 
-    formControl: Function, 
-  }
-};
-</script>

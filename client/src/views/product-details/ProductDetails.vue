@@ -2,8 +2,9 @@
   import useProducts from './../../api/ProductAPI.js'
   import { onMounted } from 'vue'
   import { useRouter } from "vue-router";
+  import {API_URL} from './../../config/index.js'
 
-  const { product, getProduct, getProducts } = useProducts()
+  const { product, getProduct } = useProducts()
 
   const props = defineProps({
     id: {
@@ -14,15 +15,6 @@
   const router = useRouter()
 
   onMounted(() => getProduct(props.id) )
-
-//   const getDetails = async (productID) => {
-//     // ******* Check Product id *******
-//     try {
-//         getProduct(productID)
-//     } catch (error) {
-//         console.log("Noo")
-//     }
-//   }
   
 </script>
 
@@ -39,7 +31,7 @@
         <div class="details">
             <!-- Image -->
             <div class="image">
-                <img :src="'http://127.0.0.1:8000/storage/' + product.image" />
+                <img :src="API_URL + 'storage/' + product.image" />
             </div>
             <!-- Info -->
             <div class="info">

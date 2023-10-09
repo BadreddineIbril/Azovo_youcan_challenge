@@ -3,9 +3,9 @@
   import Intro from './components/Intro.vue'
   import useProducts from './../../api/ProductAPI.js'
   import useCategories from './../../api/CategoryAPI.js'
-  import { onMounted, ref, computed, watch, nextTick  } from 'vue'
+  import { onMounted, ref, computed, defineProps  } from 'vue'
 
-  const { products, getProducts ,getProductsByCategory } = useProducts()
+  const { products, getProducts } = useProducts()
   const { categories, getCategories } = useCategories()
 
   // ****** Get Data *******
@@ -33,6 +33,7 @@
       default:
         return products.value.slice();
     }
+
   });
 
 
@@ -72,8 +73,9 @@
         <div class="products">
             <ProductCard 
                 v-for="product in sortedProducts" :key="product.id" :product="product"
-                :category="selectedCategoryId"
+                :category="selectedCategoryId" 
             />
         </div>
     </div>
 </template>
+

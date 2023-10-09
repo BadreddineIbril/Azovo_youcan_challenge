@@ -1,11 +1,14 @@
 <script setup>
   import useCategories from './../../api/CategoryAPI.js'
   import Loader from './../Loader.vue'
-  import { onMounted, ref, reactive  } from 'vue'
+  import { onMounted, ref, reactive, defineProps } from 'vue'
 
   const { storeCategory, errors } = useCategories()
   const loading = ref(false)
   const successMsg = ref("")
+
+  // --- Props ---
+  const { control, formControl } = defineProps(['control', 'formControl']);
 
   // ****** Form Data *******
   const payload = reactive({
@@ -85,11 +88,3 @@
     <Loader v-if="loading" />
 </template>
 
-<script>
-export default {
-  props: {
-    control: Boolean, 
-    formControl: Function, 
-  }
-};
-</script>

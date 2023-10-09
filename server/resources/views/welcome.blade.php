@@ -100,7 +100,7 @@
                 <span class="material-symbols-outlined">shopping_bag</span>
                 <h3>Azovo <span>API</span></h3>
             </a>
-            <a class="logo" href="/">Documentation</a>
+            <a class="logo" href="/https://github.com/BadreddineIbril/Azovo_youcan_challenge" target="_blank">Documentation</a>
         </nav>
         <!-- Content -->
         <div class="content">
